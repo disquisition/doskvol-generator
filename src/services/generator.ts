@@ -21,5 +21,9 @@ export const generator = {
 
   generateGhost() {
     return grammar.flatten('#ghost#');
+  },
+
+  generateDemon() {
+    return grammar.flatten('#demon#');
   }
 };

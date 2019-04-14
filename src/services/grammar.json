@@ -427,13 +427,13 @@
   ],
 
   "person-pronouns-masculine": [
-    "[they:he][them:him][their:his][theirs:his][they're:he's][are:is][have:has][were:was][s:s][es:es][ies:ies]"
+    "[being:man][they:he][them:him][their:his][theirs:his][they're:he's][are:is][have:has][were:was][s:s][es:es][ies:ies]"
   ],
   "person-pronouns-feminine": [
-    "[they:she][them:her][their:her][theirs:hers][they're:she's][are:is][have:has][were:was][s:s][es:es][ies:ies]"
+    "[being:woman][they:she][them:her][their:her][theirs:hers][they're:she's][are:is][have:has][were:was][s:s][es:es][ies:ies]"
   ],
   "person-pronouns-neutral": [
-    "[they:they][them:them][their:their][theirs:theirs][they're:they're][are:are][have:have][were:were][s:][es:][ies:y]"
+    "[being:person][they:they][them:them][their:their][theirs:theirs][they're:they're][are:are][have:have][were:were][s:][es:][ies:y]"
   ],
   "person-pronouns": [
     "#person-pronouns-masculine#",
@@ -830,15 +830,16 @@
   ],
   "person": ["#[#person-pronouns#][#person-heritage#]person-description#"],
 
-  "ghost-pronouns-neutral": [
-    "[they:it][them:it][their:its][theirs:its][they're:it's][are:is][have:has][were:was][s:s][es:][es:es][ies:ies]"
+  "devil-pronouns-neutral": [
+    "[being:thing][they:it][them:it][their:its][theirs:its][they're:it's][are:is][have:has][were:was][s:s][es:][es:es][ies:ies]"
   ],
-  "ghost-pronouns": [
+  "devil-pronouns": [
     "#person-pronouns-masculine#",
     "#person-pronouns-feminine#",
-    "#person-pronouns-neutral#",
-    "#ghost-pronouns-neutral#"
+    "#person-pronouns-neutral#[being:humanoid]",
+    "#devil-pronouns-neutral#"
   ],
+
   "ghost-heritage": [
     "Akorosi",
     "Akorosi",
@@ -937,5 +938,152 @@
   "ghost-description": [
     "This #ghost-type# looks to have once been a #ghost-look#. #they.capitalize# #have# #ghost-trait.a# look in #their# eyes. #ghost-effect.capitalize# as #they# approach#es#."
   ],
-  "ghost": ["#[#ghost-pronouns#]ghost-description#"]
+  "ghost": ["#[#devil-pronouns#]ghost-description#"],
+
+  "demon-name": [
+    "Korvaeth",
+    "Sevraxis",
+    "Argaz",
+    "Zalvroxos",
+    "Kethtera",
+    "Arkeveron",
+    "Ixis",
+    "Kyronax",
+    "Voldranai",
+    "Esketra",
+    "Ardranax",
+    "Kylastra",
+    "Oryxus",
+    "Ahazu",
+    "Tyraxis",
+    "Azarax",
+    "Vaskari"
+  ],
+  "demon-appears": [
+    "appears",
+    "appears before you",
+    "appears at the edge of your vision",
+    "appears as if from nowhere",
+    "emerges from the shadows",
+    "emerges from the mist",
+    "emerges from the fog",
+    "rises from the water"
+  ],
+  "demon-aspect-animal-mammal": ["wolf", "goat", "horse", "cat", "rat"],
+  "demon-aspect-animal-bird": ["crow", "owl", "dove"],
+  "demon-aspect-animal-fish": ["eel", "squid", "hagfish"],
+  "demon-aspect-animal": [
+    "#demon-aspect-animal-mammal#",
+    "#demon-aspect-animal-mammal#",
+    "#demon-aspect-animal-mammal#",
+    "#demon-aspect-animal-bird#",
+    "#demon-aspect-animal-bird#",
+    "#demon-aspect-animal-fish#"
+  ],
+  "demon-aspect-animal-feature": [
+    "head of #demon-aspect-animal.a#",
+    "head of #demon-aspect-animal.a#",
+    "feet of #demon-aspect-animal-bird.a#",
+    "skin of #demon-aspect-animal-fish.a#"
+  ],
+  "demon-aspect-elemental-feature": [
+    "wreathed in blue flame",
+    "obscured by black smoke",
+    "blue with frost",
+    "[with:and]with a crown of ice",
+    "[with:and]with flesh like clay and packed earth",
+    "[with:and]with flesh like stone and gravel"
+  ],
+  "demon-aspect-common": [
+    "[with:and]#being# with the #demon-aspect-animal-feature#",
+    "#being# #demon-aspect-elemental-feature#"
+  ],
+  "demon-aspect-uncommon": [
+    "#demon-aspect-animal#",
+    "monstrous #demon-aspect-animal#",
+    "amorphous mass"
+  ],
+  "demon-aspect": ["#demon-aspect-common#", "#demon-aspect-uncommon#"],
+  "demon-feature-many": ["multiple", "many", "countless", "several"],
+  "demon-feature-scale-type": ["onyx", "crystalline", "metallic", "metallic"],
+  "demon-feature-hair": ["hair", "fur"],
+  "demon-feature-hair-detail": [
+    "drifting as if underwater",
+    "burning with a cool fire"
+  ],
+  "demon-feature-liquid-detail": [
+    "freeze",
+    "boil",
+    "turn to blood",
+    "turn to ashes"
+  ],
+  "demon-feature-physical-1": [
+    "black shark eyes",
+    "#demon-feature-scale-type# scales",
+    "razor-sharp claws",
+    "#demon-feature-many# bony protrusions",
+    "#demon-feature-many# eyes",
+    "a lashing tail",
+    "leathery wings",
+    "spines along its back",
+    "ichor weeping from its body"
+  ],
+  "demon-feature-physical-2": [
+    "glowing eyes",
+    "#demon-feature-many# glowing markings",
+    "#demon-feature-hair# #demon-feature-hair-detail#",
+    "feathers covering its body",
+    "#demon-feature-many# arms",
+    "#demon-feature-many# tentacles",
+    "a hard shell",
+    "metallic plates covering its body"
+  ],
+  "demon-feature-physical": [
+    "#demon-feature-physical-1#",
+    "#demon-feature-physical-2#"
+  ],
+  "demon-feature-aura": [
+    "lights to dim",
+    "lights to flare",
+    "plants to wither",
+    "plants to grow wildly",
+    "mechanisms to grind to a halt",
+    "liquid to #demon-feature-liquid-detail#"
+  ],
+  "demon-feature": [
+    "#demon-feature-physical-1# and #demon-feature-physical-2#",
+    "#demon-feature-physical#, whose presence causes #demon-feature-aura#"
+  ],
+  "demon-affinity": [
+    "the sea and water",
+    "darkness",
+    "earth and metal",
+    "fire and smoke",
+    "the sky and stars",
+    "storms and wind"
+  ],
+  "demon-desire": [
+    "mayhem",
+    "murder",
+    "justice",
+    "corruption",
+    "power",
+    "control",
+    "knowledge",
+    "pleasure",
+    "suffering",
+    "war",
+    "revenge",
+    "chaos",
+    "freedom",
+    "savagery",
+    "manipulation",
+    "deception",
+    "fear",
+    "achievement"
+  ],
+  "demon-description": [
+    "The demon #demon-name# #demon-appears#—#demon-aspect.a# #with# #demon-feature#. #their.capitalize# affinity is for #demon-affinity# and #they# #have# a demonic desire for #demon-desire#."
+  ],
+  "demon": ["#[#devil-pronouns#][with:with]demon-description#"]
 }
