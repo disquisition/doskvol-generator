@@ -2,6 +2,7 @@ import React from 'react';
 
 import styles from './App.module.scss';
 import { BuildingGenerator } from './BuildingGenerator';
+import { GhostGenerator } from './GhostGenerator';
 import { PersonGenerator } from './PersonGenerator';
 import { StreetGenerator } from './StreetGenerator';
 
@@ -11,6 +12,7 @@ export function App() {
       <StreetGenerator />
       <BuildingGenerator />
       <PersonGenerator />
+      <GhostGenerator />
     </main>
   );
 }

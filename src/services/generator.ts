@@ -17,5 +17,9 @@ export const generator = {
 
   generatePerson() {
     return grammar.flatten('#person#');
+  },
+
+  generateGhost() {
+    return grammar.flatten('#ghost#');
   }
 };

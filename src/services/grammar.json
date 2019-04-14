@@ -427,13 +427,13 @@
   ],
 
   "person-pronouns-masculine": [
-    "[they:he][them:him][their:his][theirs:his][they're:he's][are:is][have:has][were:was][s:s][ies:ies]"
+    "[they:he][them:him][their:his][theirs:his][they're:he's][are:is][have:has][were:was][s:s][es:es][ies:ies]"
   ],
   "person-pronouns-feminine": [
-    "[they:she][them:her][their:her][theirs:hers][they're:she's][are:is][have:has][were:was][s:s][ies:ies]"
+    "[they:she][them:her][their:her][theirs:hers][they're:she's][are:is][have:has][were:was][s:s][es:es][ies:ies]"
   ],
   "person-pronouns-neutral": [
-    "[they:they][them:them][their:their][theirs:theirs][they're:they're][are:are][have:have][were:were][s:][ies:y]"
+    "[they:they][them:them][their:their][theirs:theirs][they're:they're][are:are][have:have][were:were][s:][es:][ies:y]"
   ],
   "person-pronouns": [
     "#person-pronouns-masculine#",
@@ -469,6 +469,7 @@
     "[heritage:Akorosi][demonic-trait-description:]",
     "[heritage:Skovlander][demonic-trait-description:]",
     "[heritage:Skovlander][demonic-trait-description:]",
+    "[heritage:Iruvian][demonic-trait-description:]",
     "[heritage:Dagger Islander][demonic-trait-description:]",
     "[heritage:Severosi][demonic-trait-description:]",
     "[heritage:Tycherosi][demonic-trait-description: Looks like #they# #have# #person-demonic-trait#...]"
@@ -827,5 +828,114 @@
   "person-description": [
     "This #person-look# wears #person-style#. #they.capitalize# seek#s# #person-goal# and solve#s# #their# problems with #person-method#. #they're.capitalize# #person-trait# and #person-quirk#. #their.capitalize# interests include #person-interest#.#demonic-trait-description#"
   ],
-  "person": ["#[#person-pronouns#][#person-heritage#]person-description#"]
+  "person": ["#[#person-pronouns#][#person-heritage#]person-description#"],
+
+  "ghost-pronouns-neutral": [
+    "[they:it][them:it][their:its][theirs:its][they're:it's][are:is][have:has][were:was][s:s][es:][es:es][ies:ies]"
+  ],
+  "ghost-pronouns": [
+    "#person-pronouns-masculine#",
+    "#person-pronouns-feminine#",
+    "#person-pronouns-neutral#",
+    "#ghost-pronouns-neutral#"
+  ],
+  "ghost-heritage": [
+    "Akorosi",
+    "Akorosi",
+    "Akorosi",
+    "Akorosi",
+    "Akorosi",
+    "Akorosi",
+    "Skovlander",
+    "Skovlander",
+    "Iruvian",
+    "Dagger Islander",
+    "Severosi",
+    "Tycherosi"
+  ],
+  "ghost-type": [
+    "ghost",
+    "spectre",
+    "phantasm",
+    "phantom",
+    "wraith",
+    "apparition"
+  ],
+  "ghost-look": [
+    "#person-look-adjective# #ghost-heritage# #person-profession#"
+  ],
+  "ghost-trait": [
+    "jealous",
+    "desperate",
+    "violent",
+    "hysterical",
+    "skittish",
+    "fleeting",
+    "curious",
+    "deceptive",
+    "clever",
+    "probing",
+    "knowledgeable",
+    "charming",
+    "prophetic",
+    "insightful",
+    "true",
+    "revelatory",
+    "guiding",
+    "instructive",
+    "reactive",
+    "territorial",
+    "dominant",
+    "insistent",
+    "bold",
+    "demanding",
+    "angry",
+    "volatile",
+    "aggressive",
+    "wild",
+    "savage",
+    "vengeful",
+    "mad",
+    "chaotic",
+    "bizarre",
+    "destructive",
+    "insane",
+    "vile"
+  ],
+  "ghost-effect-common": [
+    "frost and chill manifest",
+    "cold wind issues forth",
+    "faint visions of the local past flicker into view",
+    "electricity discharges from #them#",
+    "weird shadows race across the floor",
+    "you hear faint echoes"
+  ],
+  "ghost-effect-uncommon": [
+    "mist and fog rises",
+    "rushing wind issues forth",
+    "you see intense visual echoes",
+    "intense magnetism tugs at every metallic object present",
+    "disturbing shadows crawl across the walls",
+    "thunderous sounds issue from above"
+  ],
+  "ghost-effect-rare": [
+    "freezing fog settles on your skin",
+    "storm winds thrash you",
+    "pitch darkness blankets you",
+    "lightning strikes nearly on top of you",
+    "clutching shadows grab at your ankles",
+    "you begin to hear voices in your head"
+  ],
+  "ghost-effect": [
+    "#ghost-effect-common#",
+    "#ghost-effect-common#",
+    "#ghost-effect-common#",
+    "#ghost-effect-uncommon#",
+    "#ghost-effect-uncommon#",
+    "#ghost-effect-rare#"
+  ],
+  "ghost-description": [
+    "This #ghost-type# looks to have once been a #ghost-look#. #they.capitalize# #have# #ghost-trait.a# look in #their# eyes. #ghost-effect.capitalize# as #they# approach#es#."
+  ],
+  "ghost": ["#[#ghost-pronouns#]ghost-description#"]
 }
