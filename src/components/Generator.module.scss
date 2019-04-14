@@ -1,0 +1,30 @@
+.generator {
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  margin: 10px 0;
+}
+
+.generatorHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border-bottom: 1px solid lightgray;
+}
+
+.generatorHeaderText {
+  font-style: italic;
+  align-self: flex-start;
+}
+
+.generatorHeaderButtons {
+  align-self: flex-end;
+}
+
+.generatorContent {
+  font: inherit;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  resize: none;
+}

@@ -1,0 +1,15 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "react-app",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["@typescript-eslint", "react", "simple-import-sort"],
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": ["off"],
+    "@typescript-eslint/indent": ["off"],
+    "simple-import-sort/sort": ["warn"],
+    "sort-imports": ["off"]
+  }
+}

@@ -6,26 +6,33 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint --fix \"src/**\""
   },
   "dependencies": {
-    "bootstrap": "4.3.1",
+    "classnames": "2.2.6",
+    "node-sass": "4.11.0",
     "react": "16.8.6",
+    "react-autosize-textarea": "7.0.0",
     "react-dom": "16.8.6",
     "react-scripts": "2.1.8",
-    "reactstrap": "8.0.0"
+    "tracery-grammar": "2.7.4",
+    "typescript": "3.4.3"
   },
   "devDependencies": {
+    "@types/classnames": "2.2.7",
     "@types/jest": "24.0.11",
     "@types/node": "11.13.4",
     "@types/react": "16.8.13",
     "@types/react-dom": "16.8.3",
     "@types/reactstrap": "7.1.3",
-    "typescript": "3.4.3",
-    "typescript-plugin-css-modules": "1.0.5"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "@typescript-eslint/eslint-plugin": "1.6.0",
+    "@typescript-eslint/parser": "1.6.0",
+    "eslint": "5.12.0",
+    "eslint-config-prettier": "4.1.0",
+    "eslint-plugin-prettier": "3.0.1",
+    "eslint-plugin-simple-import-sort": "3.1.0",
+    "prettier": "1.17.0"
   },
   "browserslist": [
     ">0.2%",
