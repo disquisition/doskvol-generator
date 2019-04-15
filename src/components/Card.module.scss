@@ -1,26 +1,26 @@
-.generator {
+.card {
   border: 1px solid lightgray;
   border-radius: 3px;
   margin: 10px 0;
 }
 
-.generatorHeader {
+.cardHeader {
   display: flex;
   justify-content: space-between;
   padding: 5px 10px;
   border-bottom: 1px solid lightgray;
 }
 
-.generatorHeaderText {
+.cardHeaderText {
   font-style: italic;
-  align-self: flex-start;
 }
 
-.generatorHeaderButtons {
-  align-self: flex-end;
+.cardHeaderButtons {
+  display: flex;
+  align-items: center;
 }
 
-.generatorContent {
+.cardContent {
   font: inherit;
   display: block;
   width: 100%;
