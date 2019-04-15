@@ -1,40 +1,22 @@
 import React from 'react';
-import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import styles from './App.module.scss';
-import { BuildingGenerator } from './BuildingGenerator';
-import { DevilGenerator } from './DevilGenerator';
-import { PeopleGenerator } from './PeopleGenerator';
-import { StreetGenerator } from './StreetGenerator';
-
-interface TabDescription {
-  title: string;
-  component: React.ComponentType;
-}
-
-const tabs: TabDescription[] = [
-  { title: 'Streets', component: StreetGenerator },
-  { title: 'Buildings', component: BuildingGenerator },
-  { title: 'People', component: PeopleGenerator },
-  { title: 'Devils', component: DevilGenerator }
-];
+import { Generator } from './Generator';
+import { Home } from './Home';
 
 export function App() {
   return (
-    <main className={styles.main}>
-      <Tabs>
-        <TabList>
-          {tabs.map(t => (
-            <Tab key={t.title}>{t.title}</Tab>
-          ))}
-        </TabList>
-
-        {tabs.map(t => (
-          <TabPanel key={t.title}>
-            <t.component />
-          </TabPanel>
-        ))}
-      </Tabs>
-    </main>
+    <Router>
+      <div className={styles.main}>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route
+            path={['/generator/:generatorName', '/generator']}
+            component={Generator}
+          />
+        </Switch>
+      </div>
+    </Router>
   );
 }
