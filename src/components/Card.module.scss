@@ -18,6 +18,10 @@
 .cardHeaderButtons {
   display: flex;
   align-items: center;
+
+  > * + * {
+    margin-left: 3px;
+  }
 }
 
 .cardContent {

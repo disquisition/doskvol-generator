@@ -1,9 +1,21 @@
 .devilsHeader {
   display: flex;
   align-items: baseline;
+
+  > * + * {
+    margin-left: 5px;
+  }
+}
+
+.devilsHeaderButtonText {
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .devilsHeading {
   font-size: 1.2rem;
-  margin: 0.5em 0.5em 0.5em 0;
+  margin: 10px 10px 10px 0;
 }

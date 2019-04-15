@@ -5,8 +5,8 @@ import { generator } from '../services/generator';
 import { useDispatch, useMappedState } from '../store';
 import { addPerson, removePerson, updatePerson } from '../store/people/actions';
 import { State } from '../store/state';
+import { Button } from './Button';
 import { Card } from './Card';
-import { IconButton } from './IconButton';
 import styles from './PeopleGenerator.module.scss';
 
 function usePeople() {
@@ -48,9 +48,9 @@ export function PeopleGenerator() {
       <header className={styles.peopleHeader}>
         <h2 className={styles.peopleHeading}>People</h2>
 
-        <IconButton title="New person" onClick={addPerson}>
-          <GoPlus />
-        </IconButton>
+        <Button title="New person" aria-label="New person" onClick={addPerson}>
+          <GoPlus className="icon" aria-hidden="true" />
+        </Button>
       </header>
 
       {people.map(p => (

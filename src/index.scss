@@ -18,3 +18,8 @@ code {
 }
 
 @import './react-tabs.scss';
+
+.icon {
+  display: inline-block;
+  transform: translateY(0.125em);
+}

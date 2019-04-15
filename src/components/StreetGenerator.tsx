@@ -9,8 +9,8 @@ import {
   removeStreet,
   updateStreet
 } from '../store/streets/actions';
+import { Button } from './Button';
 import { Card } from './Card';
-import { IconButton } from './IconButton';
 import styles from './StreetGenerator.module.scss';
 
 function useStreets() {
@@ -52,9 +52,9 @@ export function StreetGenerator() {
       <header className={styles.streetsHeader}>
         <h2 className={styles.streetsHeading}>Streets</h2>
 
-        <IconButton title="New street" onClick={addStreet}>
-          <GoPlus />
-        </IconButton>
+        <Button title="New street" aria-label="New street" onClick={addStreet}>
+          <GoPlus className="icon" aria-hidden="true" />
+        </Button>
       </header>
 
       {streets.map(s => (

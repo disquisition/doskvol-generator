@@ -6,9 +6,9 @@ import { useDispatch, useMappedState } from '../store';
 import { addDevil, removeDevil, updateDevil } from '../store/devils/actions';
 import { DevilType } from '../store/devils/state';
 import { State } from '../store/state';
+import { Button } from './Button';
 import { Card } from './Card';
 import styles from './DevilGenerator.module.scss';
-import { IconButton } from './IconButton';
 
 function useDevils() {
   const mapState = useCallback((state: State) => state.devils.devils, []);
@@ -106,13 +106,15 @@ export function DevilGenerator() {
       <header className={styles.devilsHeader}>
         <h2 className={styles.devilsHeading}>Devils</h2>
 
-        <IconButton title="New demon" onClick={addDemon}>
-          <GoPlus />
-        </IconButton>
+        <Button title="New demon" onClick={addDemon}>
+          <GoPlus className="icon" aria-hidden="true" />{' '}
+          <span className={styles.devilsHeaderButtonText}>Demon</span>
+        </Button>
 
-        <IconButton title="New ghost" onClick={addGhost}>
-          <GoPlus />
-        </IconButton>
+        <Button title="New ghost" onClick={addGhost}>
+          <GoPlus className="icon" aria-hidden="true" />{' '}
+          <span className={styles.devilsHeaderButtonText}>Ghost</span>
+        </Button>
       </header>
 
       {devils.map(d => (

@@ -4,8 +4,8 @@ import TextareaAutosize from 'react-autosize-textarea';
 import { GoSync, GoX } from 'react-icons/go';
 
 import { useId } from '../hooks/use-id';
+import { Button } from './Button';
 import styles from './Card.module.scss';
-import { IconButton } from './IconButton';
 
 export interface CardProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   title: string;
@@ -23,13 +23,21 @@ export function Card(props: CardProps) {
         <div className={styles.cardHeaderText}>{title}</div>
 
         <div className={styles.cardHeaderButtons}>
-          <IconButton title="Reload" onClick={() => onReload && onReload()}>
-            <GoSync size="1em" />
-          </IconButton>
+          <Button
+            title="Reload"
+            aria-label="Reload"
+            onClick={() => onReload && onReload()}
+          >
+            <GoSync className="icon" size="1em" aria-hidden="true" />
+          </Button>
 
-          <IconButton title="Delete" onClick={() => onDelete && onDelete()}>
-            <GoX size="1em" />
-          </IconButton>
+          <Button
+            title="Delete"
+            aria-label="Delete"
+            onClick={() => onDelete && onDelete()}
+          >
+            <GoX className="icon" size="1em" aria-hidden="true" />
+          </Button>
         </div>
       </label>
 

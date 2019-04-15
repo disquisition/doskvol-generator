@@ -1,9 +1,13 @@
 .streetsHeader {
   display: flex;
   align-items: baseline;
+
+  > * + * {
+    margin-left: 5px;
+  }
 }
 
 .streetsHeading {
   font-size: 1.2rem;
-  margin: 0.5em 0.5em 0.5em 0;
+  margin: 10px 10px 10px 0;
 }

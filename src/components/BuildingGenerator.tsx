@@ -10,8 +10,8 @@ import {
 } from '../store/buildings/actions';
 import { State } from '../store/state';
 import styles from './BuildingGenerator.module.scss';
+import { Button } from './Button';
 import { Card } from './Card';
-import { IconButton } from './IconButton';
 
 function useBuildings() {
   const mapState = useCallback((state: State) => state.buildings.buildings, []);
@@ -55,9 +55,13 @@ export function BuildingGenerator() {
       <header className={styles.buildingsHeader}>
         <h2 className={styles.buildingsHeading}>Buildings</h2>
 
-        <IconButton title="New building" onClick={addBuilding}>
-          <GoPlus />
-        </IconButton>
+        <Button
+          title="New building"
+          aria-label="New building"
+          onClick={addBuilding}
+        >
+          <GoPlus className="icon" aria-hidden="true" />
+        </Button>
       </header>
 
       {buildings.map(b => (

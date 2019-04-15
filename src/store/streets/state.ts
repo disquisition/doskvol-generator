@@ -1,3 +1,7 @@
+import uuid from 'uuid/v4';
+
+import { generator } from '../../services/generator';
+
 export interface Street {
   id: string;
   description: string;
@@ -8,5 +12,10 @@ export interface StreetsState {
 }
 
 export const initialState: StreetsState = {
-  streets: []
+  streets: [
+    {
+      id: uuid(),
+      description: generator.generateStreet()
+    }
+  ]
 };
