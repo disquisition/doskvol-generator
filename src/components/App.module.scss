@@ -1,4 +1,30 @@
+@import '../colors';
+
 .main {
   width: 400px;
   margin: 15px auto;
+}
+
+.mainNav {
+  color: white;
+  background-color: $maroon;
+}
+
+.mainNavList {
+  padding: 10px;
+  margin: 0;
+  list-style: none;
+}
+
+.mainNavListItem {
+  display: inline-block;
+
+  & + & {
+    margin-left: 10px;
+  }
+}
+
+.mainNavLink {
+  color: white;
+  text-decoration: none;
 }

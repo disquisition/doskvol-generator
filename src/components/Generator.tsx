@@ -36,7 +36,7 @@ export type GeneratorProps = RouteComponentProps<GeneratorParams>;
 export function Generator({ history, match }: GeneratorProps) {
   useEffect(() => {
     if (getTabIndexByName(match.params.generatorName) === -1) {
-      history.replace(getTabNameByIndex(0));
+      history.replace(`/generators/${getTabNameByIndex(0)}`);
     }
   }, [match.params.generatorName]);
 
