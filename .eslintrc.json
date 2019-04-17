@@ -8,9 +8,16 @@
     "prettier/babel",
     "prettier/react"
   ],
-  "plugins": ["@typescript-eslint", "react", "simple-import-sort"],
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "react-hooks",
+    "simple-import-sort"
+  ],
   "rules": {
     "@typescript-eslint/explicit-function-return-type": ["off"],
+    "react-hooks/rules-of-hooks": ["error"],
+    "react-hooks/exhaustive-deps": ["warn"],
     "simple-import-sort/sort": ["warn"],
     "sort-imports": ["off"]
   }
