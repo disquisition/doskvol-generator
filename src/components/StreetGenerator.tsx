@@ -10,8 +10,8 @@ import {
   updateStreet
 } from '../store/streets/actions';
 import { Button } from './Button';
-import { Card } from './Card';
 import styles from './StreetGenerator.module.scss';
+import { TextAreaCard } from './TextAreaCard';
 
 function useStreets() {
   const mapState = useCallback((state: State) => state.streets.streets, []);
@@ -22,7 +22,9 @@ function useStreets() {
 function useAddStreet() {
   const dispatch = useDispatch();
 
-  return useCallback(() => dispatch(addStreet(generator.generateStreet())), []);
+  return useCallback(() => dispatch(addStreet(generator.generateStreet())), [
+    dispatch
+  ]);
 }
 
 function useUpdateStreet() {
@@ -31,14 +33,14 @@ function useUpdateStreet() {
   return useCallback(
     (id: string, description: string) =>
       dispatch(updateStreet({ id, description })),
-    []
+    [dispatch]
   );
 }
 
 function useRemoveStreet() {
   const dispatch = useDispatch();
 
-  return useCallback((id: string) => dispatch(removeStreet(id)), []);
+  return useCallback((id: string) => dispatch(removeStreet(id)), [dispatch]);
 }
 
 export function StreetGenerator() {
@@ -52,15 +54,15 @@ export function StreetGenerator() {
       <header className={styles.streetsHeader}>
         <h2 className={styles.streetsHeading}>Streets</h2>
 
-        <Button title="New street" aria-label="New street" onClick={addStreet}>
+        <Button label="New street" aria-label="New street" onClick={addStreet}>
           <GoPlus className="icon" aria-hidden="true" />
         </Button>
       </header>
 
       {streets.map(s => (
-        <Card
+        <TextAreaCard
           key={s.id}
-          title="Street"
+          label="Street"
           value={s.description}
           onChange={e =>
             updateStreet(s.id, (e.target as HTMLTextAreaElement).value)

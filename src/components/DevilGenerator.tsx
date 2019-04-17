@@ -7,8 +7,8 @@ import { addDevil, removeDevil, updateDevil } from '../store/devils/actions';
 import { DevilType } from '../store/devils/state';
 import { State } from '../store/state';
 import { Button } from './Button';
-import { Card } from './Card';
 import styles from './DevilGenerator.module.scss';
+import { TextAreaCard } from './TextAreaCard';
 
 function useDevils() {
   const mapState = useCallback((state: State) => state.devils.devils, []);
@@ -27,7 +27,7 @@ function useAddDemon() {
           description: generator.generateDemon()
         })
       ),
-    []
+    [dispatch]
   );
 }
 
@@ -42,7 +42,7 @@ function useAddGhost() {
           description: generator.generateGhost()
         })
       ),
-    []
+    [dispatch]
   );
 }
 
@@ -52,7 +52,7 @@ function useUpdateDevil() {
   return useCallback(
     (id: string, description: string) =>
       dispatch(updateDevil({ id, description })),
-    []
+    [dispatch]
   );
 }
 
@@ -91,7 +91,7 @@ function getDevilTypeDescription(type: DevilType) {
 function useRemoveDevil() {
   const dispatch = useDispatch();
 
-  return useCallback((id: string) => dispatch(removeDevil(id)), []);
+  return useCallback((id: string) => dispatch(removeDevil(id)), [dispatch]);
 }
 
 export function DevilGenerator() {
@@ -106,21 +106,21 @@ export function DevilGenerator() {
       <header className={styles.devilsHeader}>
         <h2 className={styles.devilsHeading}>Devils</h2>
 
-        <Button title="New demon" onClick={addDemon}>
+        <Button label="New demon" onClick={addDemon}>
           <GoPlus className="icon" aria-hidden="true" />{' '}
           <span className={styles.devilsHeaderButtonText}>Demon</span>
         </Button>
 
-        <Button title="New ghost" onClick={addGhost}>
+        <Button label="New ghost" onClick={addGhost}>
           <GoPlus className="icon" aria-hidden="true" />{' '}
           <span className={styles.devilsHeaderButtonText}>Ghost</span>
         </Button>
       </header>
 
       {devils.map(d => (
-        <Card
+        <TextAreaCard
           key={d.id}
-          title={getDevilTypeDescription(d.type)}
+          label={getDevilTypeDescription(d.type)}
           value={d.description}
           onChange={e =>
             updateDevil(d.id, (e.target as HTMLTextAreaElement).value)

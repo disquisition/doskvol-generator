@@ -6,8 +6,8 @@ import { useDispatch, useMappedState } from '../store';
 import { addPerson, removePerson, updatePerson } from '../store/people/actions';
 import { State } from '../store/state';
 import { Button } from './Button';
-import { Card } from './Card';
 import styles from './PeopleGenerator.module.scss';
+import { TextAreaCard } from './TextAreaCard';
 
 function usePeople() {
   const mapState = useCallback((state: State) => state.people.people, []);
@@ -18,7 +18,9 @@ function usePeople() {
 function useAddPerson() {
   const dispatch = useDispatch();
 
-  return useCallback(() => dispatch(addPerson(generator.generatePerson())), []);
+  return useCallback(() => dispatch(addPerson(generator.generatePerson())), [
+    dispatch
+  ]);
 }
 
 function useUpdatePerson() {
@@ -27,14 +29,14 @@ function useUpdatePerson() {
   return useCallback(
     (id: string, description: string) =>
       dispatch(updatePerson({ id, description })),
-    []
+    [dispatch]
   );
 }
 
 function useRemovePerson() {
   const dispatch = useDispatch();
 
-  return useCallback((id: string) => dispatch(removePerson(id)), []);
+  return useCallback((id: string) => dispatch(removePerson(id)), [dispatch]);
 }
 
 export function PeopleGenerator() {
@@ -48,15 +50,15 @@ export function PeopleGenerator() {
       <header className={styles.peopleHeader}>
         <h2 className={styles.peopleHeading}>People</h2>
 
-        <Button title="New person" aria-label="New person" onClick={addPerson}>
+        <Button label="New person" aria-label="New person" onClick={addPerson}>
           <GoPlus className="icon" aria-hidden="true" />
         </Button>
       </header>
 
       {people.map(p => (
-        <Card
+        <TextAreaCard
           key={p.id}
-          title="Person"
+          label="Person"
           value={p.description}
           onChange={e =>
             updatePerson(p.id, (e.target as HTMLTextAreaElement).value)

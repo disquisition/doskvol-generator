@@ -11,7 +11,7 @@ import {
 import { State } from '../store/state';
 import styles from './BuildingGenerator.module.scss';
 import { Button } from './Button';
-import { Card } from './Card';
+import { TextAreaCard } from './TextAreaCard';
 
 function useBuildings() {
   const mapState = useCallback((state: State) => state.buildings.buildings, []);
@@ -24,7 +24,7 @@ function useAddBuilding() {
 
   return useCallback(
     () => dispatch(addBuilding(generator.generateBuilding())),
-    []
+    [dispatch]
   );
 }
 
@@ -34,14 +34,14 @@ function useUpdateBuilding() {
   return useCallback(
     (id: string, description: string) =>
       dispatch(updateBuilding({ id, description })),
-    []
+    [dispatch]
   );
 }
 
 function useRemoveBuilding() {
   const dispatch = useDispatch();
 
-  return useCallback((id: string) => dispatch(removeBuilding(id)), []);
+  return useCallback((id: string) => dispatch(removeBuilding(id)), [dispatch]);
 }
 
 export function BuildingGenerator() {
@@ -56,7 +56,7 @@ export function BuildingGenerator() {
         <h2 className={styles.buildingsHeading}>Buildings</h2>
 
         <Button
-          title="New building"
+          label="New building"
           aria-label="New building"
           onClick={addBuilding}
         >
@@ -65,9 +65,9 @@ export function BuildingGenerator() {
       </header>
 
       {buildings.map(b => (
-        <Card
+        <TextAreaCard
           key={b.id}
-          title="Building"
+          label="Building"
           value={b.description}
           onChange={e =>
             updateBuilding(b.id, (e.target as HTMLTextAreaElement).value)
