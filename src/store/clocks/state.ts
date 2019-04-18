@@ -1,5 +1,3 @@
-import uuid from 'uuid/v4';
-
 export type SegmentCount = 4 | 6 | 8 | 12;
 
 export interface Clock {
@@ -14,12 +12,5 @@ export interface ClocksState {
 }
 
 export const initialState: ClocksState = {
-  clocks: [
-    {
-      id: uuid(),
-      name: 'Attention from the Spirit Wardens',
-      segments: 4,
-      ticks: 0
-    }
-  ]
+  clocks: []
 };
