@@ -28,21 +28,13 @@ export function TextAreaCard(props: TextAreaCardProps) {
         {hasButtons && (
           <div className={cardStyles.cardHeaderButtons}>
             {onReload && (
-              <Button
-                label="Reload"
-                aria-label="Reload"
-                onClick={() => onReload()}
-              >
+              <Button aria-label="Reload" onClick={() => onReload()}>
                 <GoSync className="icon" size="1em" aria-hidden="true" />
               </Button>
             )}
 
             {onDelete && (
-              <Button
-                label="Delete"
-                aria-label="Delete"
-                onClick={() => onDelete()}
-              >
+              <Button aria-label="Delete" onClick={() => onDelete()}>
                 <GoX className="icon" size="1em" aria-hidden="true" />
               </Button>
             )}

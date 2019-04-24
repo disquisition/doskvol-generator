@@ -55,11 +55,7 @@ export function BuildingGenerator() {
       <header className={styles.buildingsHeader}>
         <h2 className={styles.buildingsHeading}>Buildings</h2>
 
-        <Button
-          label="New building"
-          aria-label="New building"
-          onClick={addBuilding}
-        >
+        <Button aria-label="New building" onClick={addBuilding}>
           <GoPlus className="icon" aria-hidden="true" />
         </Button>
       </header>

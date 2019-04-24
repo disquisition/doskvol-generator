@@ -54,7 +54,7 @@ export function StreetGenerator() {
       <header className={styles.streetsHeader}>
         <h2 className={styles.streetsHeading}>Streets</h2>
 
-        <Button label="New street" aria-label="New street" onClick={addStreet}>
+        <Button aria-label="New street" onClick={addStreet}>
           <GoPlus className="icon" aria-hidden="true" />
         </Button>
       </header>

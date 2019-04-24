@@ -50,7 +50,7 @@ export function PeopleGenerator() {
       <header className={styles.peopleHeader}>
         <h2 className={styles.peopleHeading}>People</h2>
 
-        <Button label="New person" aria-label="New person" onClick={addPerson}>
+        <Button aria-label="New person" onClick={addPerson}>
           <GoPlus className="icon" aria-hidden="true" />
         </Button>
       </header>

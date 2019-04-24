@@ -38,7 +38,7 @@ export function Generator({ history, match }: GeneratorProps) {
     if (getTabIndexByName(match.params.generatorName) === -1) {
       history.replace(`/generators/${getTabNameByIndex(0)}`);
     }
-  }, [match.params.generatorName]);
+  }, [match.params.generatorName, history]);
 
   return (
     <Tabs

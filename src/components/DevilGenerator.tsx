@@ -106,12 +106,12 @@ export function DevilGenerator() {
       <header className={styles.devilsHeader}>
         <h2 className={styles.devilsHeading}>Devils</h2>
 
-        <Button label="New demon" onClick={addDemon}>
+        <Button aria-label="New demon" onClick={addDemon}>
           <GoPlus className="icon" aria-hidden="true" />{' '}
           <span className={styles.devilsHeaderButtonText}>Demon</span>
         </Button>
 
-        <Button label="New ghost" onClick={addGhost}>
+        <Button aria-label="New ghost" onClick={addGhost}>
           <GoPlus className="icon" aria-hidden="true" />{' '}
           <span className={styles.devilsHeaderButtonText}>Ghost</span>
         </Button>

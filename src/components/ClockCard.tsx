@@ -39,11 +39,7 @@ export function ClockCard(props: ClockCardProps) {
 
         {onDelete && (
           <div className={cardStyles.cardHeaderButtons}>
-            <Button
-              label="Delete"
-              aria-label="Delete"
-              onClick={() => onDelete()}
-            >
+            <Button aria-label="Delete" onClick={() => onDelete()}>
               <GoX className="icon" size="1em" aria-hidden="true" />
             </Button>
           </div>

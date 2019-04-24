@@ -50,11 +50,7 @@ export function AddClockCard(props: AddClockCardProps) {
         <span className={cardStyles.cardHeaderText}>New Clock</span>
 
         <div className={cardStyles.cardHeaderButtons}>
-          <Button
-            label="Add"
-            aria-label="Add"
-            onClick={() => onAddClick(name, segments)}
-          >
+          <Button aria-label="Add" onClick={() => onAddClick(name, segments)}>
             <GoPlus className="icon" size="1em" aria-hidden="true" />
           </Button>
         </div>
