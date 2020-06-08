@@ -1,18 +1,34 @@
 import React, { useState } from 'react';
+import { v4 as uuid } from 'uuid';
 
-import * as generator from '../services/generator';
 import styles from './App.module.scss';
+// import { Building } from './Building';
+import { Demon } from './Demon';
+import { Ghost } from './Ghost';
 import { GradientScroll } from './GradientScroll';
+import { Person } from './Person';
+// import { Street } from './Street';
+
+interface AppState {
+  Component: React.FunctionComponent | React.ComponentClass;
+  key: string;
+}
 
 export function App() {
-  const [generatedContent, updateGeneratedContent] = useState(() =>
-    generator.generatePerson()
-  );
+  const [{ Component, key }, updateState] = useState<AppState>(() => ({
+    Component: Person,
+    key: uuid()
+  }));
+
+  const generate = (Component: React.FunctionComponent) =>
+    updateState({ Component, key: uuid() });
 
   return (
     <main className={styles.main}>
       <div className={styles.generatedText}>
-        <GradientScroll>{generatedContent}</GradientScroll>
+        <GradientScroll>
+          <Component key={key} />
+        </GradientScroll>
       </div>
 
       <div className={styles.generateButtons}>
@@ -21,7 +37,7 @@ export function App() {
         <button
           type="button"
           className={styles.generateButton}
-          onClick={() => updateGeneratedContent(generator.generatePerson())}
+          onClick={() => generate(Person)}
         >
           Person
         </button>
@@ -29,7 +45,7 @@ export function App() {
         <button
           type="button"
           className={styles.generateButton}
-          onClick={() => updateGeneratedContent(generator.generateGhost())}
+          onClick={() => generate(Ghost)}
         >
           Ghost
         </button>
@@ -37,7 +53,7 @@ export function App() {
         <button
           type="button"
           className={styles.generateButton}
-          onClick={() => updateGeneratedContent(generator.generateDemon())}
+          onClick={() => generate(Demon)}
         >
           Demon
         </button>
@@ -45,7 +61,7 @@ export function App() {
         {/* <button
           type="button"
           className={styles.generateButton}
-          onClick={() => updateGeneratedContent(generator.generateStreet())}
+          onClick={() => generate(Street)}
         >
           Street
         </button>
@@ -53,7 +69,7 @@ export function App() {
         <button
           type="button"
           className={styles.generateButton}
-          onClick={() => updateGeneratedContent(generator.generateBuilding())}
+          onClick={() => generate(Building)}
         >
           Building
         </button> */}
