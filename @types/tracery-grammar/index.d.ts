@@ -10,7 +10,7 @@ declare module 'tracery-grammar' {
       addModifiers(mods: any): void;
       clearState(): void;
       createRoot(rule: any): any;
-      expand(rule: any, allowEscapeChars?: boolean): any;
+      expand(rule: any, allowEscapeChars?: boolean): TraceryNode;
       flatten(rule: string, allowEscapeChars?: boolean): string;
       loadFromRawObj(raw: RawGrammar): void;
       popRules(key: any): void;
@@ -35,7 +35,37 @@ declare module 'tracery-grammar' {
       selectRule(node: any, errors: any): any;
     }
 
+    class NodeAction {
+      finishedRules: string[];
+      node: TraceryNode;
+      rule: string;
+      ruleNodes: any[];
+      ruleSections: string[];
+      target: string;
+      type: number;
+      constructor(node: any, raw: any);
+      activate(): any;
+      createUndo(): any;
+      toText(): any;
+    }
+
     class TraceryNode {
+      action?: NodeAction;
+      childIndex: number;
+      childRule?: string;
+      children?: TraceryNode[];
+      depth: number;
+      errors: any[];
+      expansionErrors: any[];
+      finishedText: string;
+      grammar: Grammar;
+      isExpanded: boolean;
+      parent: TraceryNode | null;
+      postactions?: any[];
+      preactions?: any[];
+      raw: string;
+      symbol?: string;
+      type: number;
       constructor(parent: any, childIndex: any, settings: any);
       clearEscapeChars(): void;
       expand(preventRecursion: any): void;

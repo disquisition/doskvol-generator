@@ -1,0 +1,29 @@
+@import '../colors';
+
+.primaryEmphasis {
+  font-family: gothicus, serif;
+  font-size: 1.4em;
+  font-weight: 400;
+  font-style: normal;
+  font-variant: common-ligatures;
+  line-height: 1rem;
+
+  em,
+  strong {
+    font-style: normal;
+    font-weight: inherit;
+    letter-spacing: 0.1em;
+  }
+}
+
+.secondaryEmphasis {
+  display: inline-block;
+  color: white;
+  font-family: mrs-eaves-roman-all-small-ca, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.1em;
+  padding: 0 0.2em;
+  background-color: $black;
+  line-height: 1em;
+}

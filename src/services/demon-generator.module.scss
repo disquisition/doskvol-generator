@@ -1,0 +1,8 @@
+.demonName {
+  font-size: 1.2em;
+  // Hack to get around buggy PostCSS font-variant plugin
+  font-feature-settings: 'smcp'; // Will be used
+  font-feature-settings: break; // Will break
+  font-variant: small-caps;
+  line-height: 1rem;
+}

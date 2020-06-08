@@ -1,57 +1,63 @@
-import React from 'react';
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import React, { useState } from 'react';
 
+import * as generator from '../services/generator';
 import styles from './App.module.scss';
-import { Clocks } from './Clocks';
-import { Districts } from './Districts';
-import { Generator } from './Generator';
-import { Home } from './Home';
+import { GradientScroll } from './GradientScroll';
 
 export function App() {
+  const [generatedContent, updateGeneratedContent] = useState(() =>
+    generator.generatePerson()
+  );
+
   return (
-    <Router>
-      <nav className={styles.mainNav}>
-        <ul className={styles.mainNavList}>
-          <li className={styles.mainNavListItem}>
-            <Link className={styles.mainNavLink} to="/">
-              Home
-            </Link>
-          </li>
+    <main className={styles.main}>
+      <div className={styles.generatedText}>
+        <GradientScroll>{generatedContent}</GradientScroll>
+      </div>
 
-          <li className={styles.mainNavListItem}>
-            <Link className={styles.mainNavLink} to="/districts">
-              Districts
-            </Link>
-          </li>
+      <div className={styles.generateButtons}>
+        <span className={styles.generateButtonsLabel}>Generate a...</span>
 
-          <li className={styles.mainNavListItem}>
-            <Link className={styles.mainNavLink} to="/clocks">
-              Clocks
-            </Link>
-          </li>
+        <button
+          type="button"
+          className={styles.generateButton}
+          onClick={() => updateGeneratedContent(generator.generatePerson())}
+        >
+          Person
+        </button>
 
-          <li className={styles.mainNavListItem}>
-            <Link className={styles.mainNavLink} to="/generators">
-              Generators
-            </Link>
-          </li>
-        </ul>
-      </nav>
+        <button
+          type="button"
+          className={styles.generateButton}
+          onClick={() => updateGeneratedContent(generator.generateGhost())}
+        >
+          Ghost
+        </button>
 
-      <main className={styles.main}>
-        <Switch>
-          <Route exact path="/" component={Home} />
+        <button
+          type="button"
+          className={styles.generateButton}
+          onClick={() => updateGeneratedContent(generator.generateDemon())}
+        >
+          Demon
+        </button>
 
-          <Route path="/districts" component={Districts} />
+        {/* <button
+          type="button"
+          className={styles.generateButton}
+          onClick={() => updateGeneratedContent(generator.generateStreet())}
+        >
+          Street
+        </button>
 
-          <Route path="/clocks" component={Clocks} />
-
-          <Route
-            path={['/generators/:generatorName', '/generators']}
-            component={Generator}
-          />
-        </Switch>
-      </main>
-    </Router>
+        <button
+          type="button"
+          className={styles.generateButton}
+          onClick={() => updateGeneratedContent(generator.generateBuilding())}
+        >
+          Building
+        </button> */}
+      </div>
+    </main>
   );
 }

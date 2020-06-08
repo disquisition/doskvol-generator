@@ -1,33 +1,53 @@
 @import '../colors';
 
 .main {
-  width: 400px;
+  display: flex;
+  flex-direction: column;
+  width: 640px;
+  height: 360px;
   margin: 15px auto;
+  border: 1px solid black;
 }
 
-.mainNav {
-  color: white;
-  background-color: $black;
+.generatedText {
+  flex: 1 1 auto;
+  padding: 1em;
+  font-size: 1.4em;
+  line-height: 1.6;
 }
 
-.mainNavList {
-  padding: 10px;
-  margin: 0;
-  list-style: none;
+.generateButtons {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  width: 100%;
+  padding: 1em;
 }
 
-.mainNavListItem {
-  display: inline-block;
-
-  & + & {
-    margin-left: 10px;
-  }
-}
-
-.mainNavLink {
-  color: white;
-  font-weight: 600;
+%generateButtonsText {
+  font-family: minion-pro, serif;
+  font-size: 1em;
+  font-weight: 700;
   font-style: normal;
-  font-variant: small-caps;
+  font-variant: all-small-caps;
+}
+
+.generateButtonsLabel {
+  @extend %generateButtonsText;
+}
+
+.generateButton {
+  @extend %generateButtonsText;
+  cursor: pointer;
+  color: white;
   text-decoration: none;
+  background-color: $black;
+  padding: 0.15em 1em 0.25em;
+  border: 1px solid white;
+  margin-left: 0.5em;
+
+  &:focus {
+    outline: 1px dotted $black;
+  }
 }
