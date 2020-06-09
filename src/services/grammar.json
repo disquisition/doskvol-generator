@@ -1657,12 +1657,12 @@
     "wreathed in blue flame",
     "obscured by black smoke",
     "blue with frost",
-    "[with:and]with a crown of ice",
-    "[with:and]with flesh like clay and packed earth",
-    "[with:and]with flesh like stone and gravel"
+    "with a crown of ice",
+    "with flesh like clay and packed earth",
+    "with flesh like stone and gravel"
   ],
   "demon-aspect-common": [
-    "[with:and]#being# with the #demon-aspect-animal-feature#",
+    "#being# with the #demon-aspect-animal-feature#",
     "#being# #demon-aspect-elemental-feature#"
   ],
   "demon-aspect-uncommon": [
@@ -1671,7 +1671,13 @@
     "amorphous mass"
   ],
   "demon-aspect": ["#demon-aspect-common#", "#demon-aspect-uncommon#"],
-  "demon-feature-many": ["multiple", "many", "countless", "several"],
+  "demon-feature-many": [
+    "multiple",
+    "many",
+    "countless",
+    "numerous",
+    "several"
+  ],
   "demon-feature-scale-type": ["onyx", "crystalline", "metallic", "metallic"],
   "demon-feature-hair": ["hair", "fur"],
   "demon-feature-hair-detail": [
@@ -1682,44 +1688,36 @@
     "freeze",
     "boil",
     "turn to blood",
-    "turn to ashes"
+    "turn to ash"
   ],
   "demon-feature-physical-1": [
-    "black shark eyes",
-    "glowing eyes",
-    "#demon-feature-many# eyes",
-    "#demon-feature-scale-type# scales",
-    "razor-sharp claws",
-    "#demon-feature-many# bony protrusions",
-    "a lashing tail",
-    "leathery wings",
-    "spines along #their# back"
+    "[feature-prefix:][feature-highlight:black shark eyes][feature-postfix:]",
+    "[feature-prefix:][feature-highlight:glowing eyes][feature-postfix:]",
+    "[feature-prefix:][feature-highlight:#demon-feature-many# eyes][feature-postfix:]",
+    "[feature-prefix:][feature-highlight:#demon-feature-scale-type# scales][feature-postfix:]",
+    "[feature-prefix:][feature-highlight:razor-sharp claws][feature-postfix:]",
+    "[feature-prefix:#demon-feature-many#][feature-highlight:bony protrusions][feature-postfix:]",
+    "[feature-prefix:a][feature-highlight:lashing tail][feature-postfix:]",
+    "[feature-prefix:][feature-highlight:leathery wings][feature-postfix:]",
+    "[feature-prefix:][feature-highlight:sharp spines][feature-postfix:along #their# back]"
   ],
   "demon-feature-physical-2": [
-    "#demon-feature-many# glowing markings",
-    "#demon-feature-hair# #demon-feature-hair-detail#",
-    "#demon-feature-many# arms",
-    "#demon-feature-many# tentacles",
-    "a hard shell",
-    "feathers covering #their# body",
-    "metallic plates covering #their# body",
-    "ichor weeping from #their# body"
-  ],
-  "demon-feature-physical": [
-    "#demon-feature-physical-1#",
-    "#demon-feature-physical-2#"
+    "[feature-prefix:#demon-feature-many#][feature-highlight:glowing markings][feature-postfix:]",
+    "[feature-prefix:#demon-feature-hair#][feature-highlight:#demon-feature-hair-detail#][feature-postfix:]",
+    "[feature-prefix:][feature-highlight:#demon-feature-many# arms][feature-postfix:]",
+    "[feature-prefix:#demon-feature-many#][feature-highlight:tentacles][feature-postfix:]",
+    "[feature-prefix:a][feature-highlight:hard shell][feature-postfix:]",
+    "[feature-prefix:][feature-highlight:feathers][feature-postfix:covering #their# body]",
+    "[feature-prefix:][feature-highlight:metallic plates][feature-postfix:covering #their# body]",
+    "[feature-prefix:][feature-highlight:vile ichor][feature-postfix:weeping from #their# body]"
   ],
   "demon-feature-aura": [
     "lights to dim",
     "lights to flare",
     "plants to wither",
     "plants to grow wildly",
-    "mechanisms to grind to a halt",
+    "machines to stall",
     "liquid to #demon-feature-liquid-detail#"
-  ],
-  "demon-feature": [
-    "#demon-feature-physical-1# and #demon-feature-physical-2#",
-    "#demon-feature-physical#, whose presence causes #demon-feature-aura#"
   ],
   "demon-affinity": [
     "the sea and water",
