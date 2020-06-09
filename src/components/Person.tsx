@@ -10,6 +10,25 @@ import { Text } from './Text';
 const HeritageContext = createContext(PersonHeritageRule.Akorosi);
 const PronounsContext = createContext(PersonPronounsRule.Neutral);
 
+interface PersonContextProps {
+  children: React.ReactNode;
+}
+
+function PersonContext({ children }: PersonContextProps) {
+  const heritageRule = useExpandedRule<PersonHeritageRule>('#person-heritage#');
+  const pronounsRule = useExpandedRule<PersonPronounsRule>('#person-pronouns#');
+
+  return (
+    <div data-testid="generated-person">
+      <HeritageContext.Provider value={heritageRule}>
+        <PronounsContext.Provider value={pronounsRule}>
+          {children}
+        </PronounsContext.Provider>
+      </HeritageContext.Provider>
+    </div>
+  );
+}
+
 function PersonStyle() {
   const heritageRule = useContext(HeritageContext);
   const pronounsRule = useContext(PronounsContext);
@@ -186,42 +205,27 @@ function PersonInterests() {
 }
 
 export function Person() {
-  const heritageRule = useExpandedRule<PersonHeritageRule>('#person-heritage#');
-  const pronounsRule = useExpandedRule<PersonPronounsRule>('#person-pronouns#');
-
   const [random] = useRandom();
 
   if (random >= 0.7) {
     return (
-      <Fragment>
-        <HeritageContext.Provider value={heritageRule}>
-          <PronounsContext.Provider value={pronounsRule}>
-            <PersonLook /> <PersonGoal />
-          </PronounsContext.Provider>
-        </HeritageContext.Provider>
-      </Fragment>
+      <PersonContext>
+        <PersonLook /> <PersonGoal />
+      </PersonContext>
     );
   }
 
   if (random >= 0.6) {
     return (
-      <Fragment>
-        <HeritageContext.Provider value={heritageRule}>
-          <PronounsContext.Provider value={pronounsRule}>
-            <PersonLook /> <PersonGoal /> <PersonInterests />
-          </PronounsContext.Provider>
-        </HeritageContext.Provider>
-      </Fragment>
+      <PersonContext>
+        <PersonLook /> <PersonGoal /> <PersonInterests />
+      </PersonContext>
     );
   }
 
   return (
-    <Fragment>
-      <HeritageContext.Provider value={heritageRule}>
-        <PronounsContext.Provider value={pronounsRule}>
-          <PersonLook /> <PersonInterests /> <PersonTraits />
-        </PronounsContext.Provider>
-      </HeritageContext.Provider>
-    </Fragment>
+    <PersonContext>
+      <PersonLook /> <PersonInterests /> <PersonTraits />
+    </PersonContext>
   );
 }

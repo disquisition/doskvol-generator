@@ -8,5 +8,8 @@
     "typescriptreact"
   ],
   "prettier.eslintIntegration": true,
-  "tslint.enable": false
+  "tslint.enable": false,
+  "cSpell.words": [
+    "testid"
+  ]
 }

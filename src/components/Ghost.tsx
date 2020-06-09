@@ -8,6 +8,22 @@ import { Text } from './Text';
 
 const PronounsContext = createContext(DevilPronounsRule.DevilNeutral);
 
+interface GhostContextProps {
+  children: React.ReactNode;
+}
+
+function GhostContext({ children }: GhostContextProps) {
+  const pronounsRule = useExpandedRule<DevilPronounsRule>('#devil-pronouns#');
+
+  return (
+    <div data-testid="generated-ghost">
+      <PronounsContext.Provider value={pronounsRule}>
+        {children}
+      </PronounsContext.Provider>
+    </div>
+  );
+}
+
 function GhostLook() {
   const pronounsRule = useContext(PronounsContext);
 
@@ -81,13 +97,9 @@ function GhostEffect() {
 }
 
 export function Ghost() {
-  const pronounsRule = useExpandedRule<DevilPronounsRule>('#devil-pronouns#');
-
   return (
-    <Fragment>
-      <PronounsContext.Provider value={pronounsRule}>
-        <GhostLook /> <GhostTrait /> <GhostEffect />
-      </PronounsContext.Provider>
-    </Fragment>
+    <GhostContext>
+      <GhostLook /> <GhostTrait /> <GhostEffect />
+    </GhostContext>
   );
 }

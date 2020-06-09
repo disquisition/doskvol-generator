@@ -2,10 +2,6 @@ import tracery from 'tracery-grammar';
 
 import rawGrammar from './grammar.json';
 
-export const grammar = tracery.createGrammar(rawGrammar);
-
-grammar.addModifiers(tracery.baseEngModifiers);
-
 export enum PersonHeritageRule {
   Akorosi = '#person-heritage-akorosi#',
   Skovlander = '#person-heritage-skovlander#',
@@ -27,6 +23,10 @@ export enum DevilPronounsRule {
   PersonNeutral = '#person-pronouns-neutral#[being:humanoid]',
   DevilNeutral = '#devil-pronouns-neutral#'
 }
+
+export const grammar = tracery.createGrammar(rawGrammar);
+
+grammar.addModifiers(tracery.baseEngModifiers);
 
 export function generateRule<T = string | undefined>(rule: string): T {
   const parent = grammar.expand(rule);

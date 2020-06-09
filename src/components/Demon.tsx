@@ -9,6 +9,22 @@ import { Text } from './Text';
 
 const PronounsContext = createContext(DevilPronounsRule.DevilNeutral);
 
+interface DemonContextProps {
+  children: React.ReactNode;
+}
+
+function DemonContext({ children }: DemonContextProps) {
+  const pronounsRule = useExpandedRule<DevilPronounsRule>('#devil-pronouns#');
+
+  return (
+    <div data-testid="generated-demon">
+      <PronounsContext.Provider value={pronounsRule}>
+        {children}
+      </PronounsContext.Provider>
+    </div>
+  );
+}
+
 function DemonLook() {
   const pronounsRule = useContext(PronounsContext);
 
@@ -70,13 +86,9 @@ function DemonAffinity() {
 }
 
 export function Demon() {
-  const pronounsRule = useExpandedRule<DevilPronounsRule>('#devil-pronouns#');
-
   return (
-    <Fragment>
-      <PronounsContext.Provider value={pronounsRule}>
-        <DemonLook /> <DemonAffinity />
-      </PronounsContext.Provider>
-    </Fragment>
+    <DemonContext>
+      <DemonLook /> <DemonAffinity />
+    </DemonContext>
   );
 }
