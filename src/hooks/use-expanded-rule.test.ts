@@ -1,5 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
+import * as GrammarModule from '../services/grammar';
 import { useExpandedRule } from './use-expanded-rule';
 
 test('should generate text', () => {
@@ -11,16 +12,22 @@ test('should generate text', () => {
 });
 
 test('should re-generate text when new rule is received', () => {
-  const { rerender, result } = renderHook(({ rule }) => useExpandedRule(rule), {
+  const spy = jest.spyOn(GrammarModule, 'generateRule');
+  const { rerender } = renderHook(({ rule }) => useExpandedRule(rule), {
     initialProps: { rule: '#person-pronouns#' }
   });
-  const firstValue = result.current;
+
+  expect(spy).toBeCalledWith('#person-pronouns#');
+
+  spy.mockClear();
 
   rerender({ rule: '#person-pronouns#' });
 
-  expect(result.current).toBe(firstValue);
+  expect(spy).not.toBeCalled();
+
+  spy.mockClear();
 
   rerender({ rule: '#devil-pronouns#' });
 
-  expect(result.current).not.toBe(firstValue);
+  expect(spy).toBeCalledWith('#devil-pronouns#');
 });

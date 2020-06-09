@@ -2,7 +2,7 @@ import React, { createContext, Fragment, useContext } from 'react';
 
 import { useExpandedRule } from '../hooks/use-expanded-rule';
 import { useFlattenedRule } from '../hooks/use-flattened-rule';
-import { useRandom } from '../hooks/use-random-number';
+import { useRandom } from '../hooks/use-random';
 import { PersonHeritageRule, PersonPronounsRule } from '../services/grammar';
 import styles from './Person.module.scss';
 import { Text } from './Text';
