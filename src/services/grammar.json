@@ -1331,9 +1331,9 @@
   "person-quirk-fabricated-detail": [
     "#their# credentials are fabricated",
     "#their# connections with #faction-name# are a lie",
-    "#they# claim to be a native #other-heritage#",
+    "#they# claim#s# to be a native #other-heritage#",
     "#they# stole #their# identity from a fallen comrade in the Unity War",
-    "#they# falsly claim to have been in a major battle in the Unity War"
+    "#they# falsly claim#s# to have been in a major battle in the Unity War"
   ],
   "person-quirk": [
     "superstitious—#they# believe#s# in signs, magic numbers, and so forth",
@@ -1748,9 +1748,5 @@
     "deception",
     "fear",
     "achievement"
-  ],
-  "demon-description": [
-    "The demon #demon-name# #demon-appears#—#demon-aspect.a# #with# #demon-feature#. #their.capitalize# affinity is for #demon-affinity# and #they# #have# a demonic desire for #demon-desire#."
-  ],
-  "demon": ["#[#devil-pronouns#][with:with]demon-description#"]
+  ]
 }
