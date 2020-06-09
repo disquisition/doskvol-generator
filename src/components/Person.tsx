@@ -19,7 +19,7 @@ function PersonContext({ children }: PersonContextProps) {
   const pronounsRule = useExpandedRule<PersonPronounsRule>('#person-pronouns#');
 
   return (
-    <div data-testid="generated-person">
+    <div className={styles.person} data-testid="generated-person">
       <HeritageContext.Provider value={heritageRule}>
         <PronounsContext.Provider value={pronounsRule}>
           {children}

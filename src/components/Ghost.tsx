@@ -4,6 +4,7 @@ import { startsWithVowel } from '../helpers/starts-with-vowel';
 import { useExpandedRule } from '../hooks/use-expanded-rule';
 import { useFlattenedRule } from '../hooks/use-flattened-rule';
 import { DevilPronounsRule, generateRule } from '../services/grammar';
+import styles from './Ghost.module.scss';
 import { Text } from './Text';
 
 const PronounsContext = createContext(DevilPronounsRule.DevilNeutral);
@@ -16,7 +17,7 @@ function GhostContext({ children }: GhostContextProps) {
   const pronounsRule = useExpandedRule<DevilPronounsRule>('#devil-pronouns#');
 
   return (
-    <div data-testid="generated-ghost">
+    <div className={styles.ghost} data-testid="generated-ghost">
       <PronounsContext.Provider value={pronounsRule}>
         {children}
       </PronounsContext.Provider>

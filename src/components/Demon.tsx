@@ -17,7 +17,7 @@ function DemonContext({ children }: DemonContextProps) {
   const pronounsRule = useExpandedRule<DevilPronounsRule>('#devil-pronouns#');
 
   return (
-    <div data-testid="generated-demon">
+    <div className={styles.demon} data-testid="generated-demon">
       <PronounsContext.Provider value={pronounsRule}>
         {children}
       </PronounsContext.Provider>
