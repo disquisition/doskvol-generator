@@ -1,5 +1,5 @@
 {
-  "name": "blades-generator",
+  "name": "doskvol-generator",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "zip": "cd build && zip ../blades-generator.zip --filesync -r .",
+    "zip": "cd build && zip ../doskvol-generator.zip --filesync -r .",
     "lint": "eslint \"src/**\"",
     "format": "eslint --quiet --fix \"src/**\" && prettier --loglevel warn --write \"{src,public}/**/*.{(t|j)sx?,s?css,json,html}\""
   },
