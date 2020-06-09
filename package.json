@@ -1,7 +1,9 @@
 {
   "name": "doskvol-generator",
+  "description": "An unofficial generator for Blades in the Dark",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "start": "react-scripts start",
     "test": "react-scripts test",
