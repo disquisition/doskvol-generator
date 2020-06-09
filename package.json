@@ -7,8 +7,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "zip": "cd build && zip ../blades-generator.zip --filesync -r .",
     "lint": "eslint \"src/**\"",
-    "format": "prettier-eslint --write \"src/**\""
+    "format": "eslint --quiet --fix \"src/**\" && prettier --loglevel warn --write \"{src,public}/**/*.{(t|j)sx?,s?css,json,html}\""
   },
   "dependencies": {
     "classnames": "2.2.6",
@@ -37,7 +38,6 @@
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-simple-import-sort": "5.0.3",
     "prettier": "2.0.5",
-    "prettier-eslint-cli": "5.0.0",
     "react-test-renderer": "16.13.1"
   },
   "browserslist": [
