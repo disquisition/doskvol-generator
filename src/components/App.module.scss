@@ -1,9 +1,9 @@
 @import '../colors';
 
 .main {
-  display: flex;
-  flex-direction: column;
-  width: 640px;
+  display: grid;
+  grid: 1fr min-content / auto;
+  max-width: 640px;
   height: 360px;
   background-color: white;
   margin: auto;
@@ -11,18 +11,15 @@
 }
 
 .generatedText {
-  flex: 1 1 auto;
-  padding: 1em 0.5em 0;
+  margin: 1em 0.5em 0;
   font-size: 1.6em;
   line-height: 1.6;
 }
 
 .generateButtons {
-  flex: 0 0 auto;
   display: flex;
   align-items: baseline;
   justify-content: center;
-  width: 100%;
   padding: 1em;
 }
 
@@ -36,6 +33,10 @@
 
 .generateButtonsLabel {
   @extend %generateButtonsText;
+
+  @media screen and (max-width: 413px) {
+    display: none;
+  }
 }
 
 .generateButton {

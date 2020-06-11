@@ -25,11 +25,9 @@ export function App() {
 
   return (
     <main className={styles.main}>
-      <div className={styles.generatedText}>
-        <GradientScroll>
-          <Component key={key} />
-        </GradientScroll>
-      </div>
+      <GradientScroll className={styles.generatedText}>
+        <Component key={key} />
+      </GradientScroll>
 
       <div className={styles.generateButtons}>
         <span className={styles.generateButtonsLabel}>Generate a...</span>

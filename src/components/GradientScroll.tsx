@@ -1,13 +1,17 @@
 import cx from 'classnames';
-import React, { ReactNode, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import styles from './GradientScroll.module.scss';
 
 export interface GradientScrollProps {
-  children?: ReactNode;
+  children?: React.ReactNode;
+  className?: string;
 }
 
-export function GradientScroll({ children }: GradientScrollProps) {
+export function GradientScroll({
+  children,
+  className = ''
+}: GradientScrollProps) {
   const [isAtTop, setIsAtTop] = useState(true);
   const [isAtBottom, setIsAtBottom] = useState(true);
   const scrollableElement = useRef<HTMLDivElement>(null);
@@ -25,22 +29,28 @@ export function GradientScroll({ children }: GradientScrollProps) {
   };
 
   useEffect(() => {
+    window.addEventListener('resize', handleScroll);
+
+    return () => window.removeEventListener('resize', handleScroll);
+  }, []);
+
+  useEffect(() => {
     handleScroll();
   }, [children]);
 
   return (
-    <div className={styles.container}>
+    <div className={cx(styles.container, className)}>
+      <div
+        className={cx(styles.overlay, {
+          [styles.top]: isAtTop,
+          [styles.bottom]: isAtBottom
+        })}
+      ></div>
       <div
         className={styles.scrollable}
         onScroll={handleScroll}
         ref={scrollableElement}
       >
-        <div
-          className={cx(styles.overlay, {
-            [styles.top]: isAtTop,
-            [styles.bottom]: isAtBottom
-          })}
-        ></div>
         <div className={styles.content} ref={contentElement}>
           {children}
         </div>
